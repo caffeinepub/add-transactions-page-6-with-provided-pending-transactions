@@ -1,0 +1,91 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+@layer base {
+  :root {
+    --radius: 0.5rem;
+    --background: 0.98 0 0;
+    --foreground: 0.15 0 0;
+    --card: 1 0 0;
+    --card-foreground: 0.15 0 0;
+    --popover: 1 0 0;
+    --popover-foreground: 0.15 0 0;
+    --primary: 0.5 0.12 220;
+    --primary-foreground: 0.98 0 0;
+    --secondary: 0.92 0.02 220;
+    --secondary-foreground: 0.15 0 0;
+    --muted: 0.94 0.01 220;
+    --muted-foreground: 0.5 0.02 220;
+    --accent: 0.88 0.03 220;
+    --accent-foreground: 0.15 0 0;
+    --destructive: 0.55 0.22 25;
+    --destructive-foreground: 0.98 0 0;
+    --border: 0.88 0.02 220;
+    --input: 0.88 0.02 220;
+    --ring: 0.5 0.12 220;
+    --chart-1: 0.6 0.18 220;
+    --chart-2: 0.5 0.2 200;
+    --chart-3: 0.65 0.15 140;
+    --chart-4: 0.55 0.22 180;
+    --chart-5: 0.7 0.12 120;
+  }
+
+  .dark {
+    --background: 0.12 0.01 220;
+    --foreground: 0.95 0.01 220;
+    --card: 0.16 0.01 220;
+    --card-foreground: 0.95 0.01 220;
+    --popover: 0.14 0.01 220;
+    --popover-foreground: 0.95 0.01 220;
+    --primary: 0.65 0.18 220;
+    --primary-foreground: 0.12 0.01 220;
+    --secondary: 0.22 0.02 220;
+    --secondary-foreground: 0.95 0.01 220;
+    --muted: 0.2 0.02 220;
+    --muted-foreground: 0.65 0.03 220;
+    --accent: 0.28 0.03 220;
+    --accent-foreground: 0.95 0.01 220;
+    --destructive: 0.6 0.2 25;
+    --destructive-foreground: 0.95 0.01 220;
+    --border: 0.24 0.02 220;
+    --input: 0.24 0.02 220;
+    --ring: 0.65 0.18 220;
+    --chart-1: 0.6 0.18 220;
+    --chart-2: 0.5 0.2 200;
+    --chart-3: 0.65 0.15 140;
+    --chart-4: 0.55 0.22 180;
+    --chart-5: 0.7 0.12 120;
+  }
+
+  * {
+    @apply border-border;
+  }
+  body {
+    @apply bg-background text-foreground;
+    font-feature-settings: "rlig" 1, "calt" 1;
+  }
+}
+
+@layer base {
+  h1,
+  h2,
+  h3,
+  h4,
+  h5,
+  h6 {
+    @apply font-bold tracking-tight;
+  }
+
+  h1 {
+    @apply text-4xl;
+  }
+
+  h2 {
+    @apply text-3xl;
+  }
+
+  h3 {
+    @apply text-2xl;
+  }
+}
