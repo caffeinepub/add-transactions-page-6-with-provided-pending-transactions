@@ -8,6 +8,27 @@ export default function TransactionHistoryPage6() {
     "All" | "Paid" | "Pending" | "Failed"
   >("All");
 
+  const paidTransactions = [
+    {
+      beneficiaryName: "Sandra Foster",
+      role: "Backend Engineer (Retired)",
+      bankName: "JPMorgan Chase",
+      maskedAccount: "29******27",
+      amountEur: BigInt(200000),
+      status: "Paid",
+      date: "18 Feb 2026",
+    },
+    {
+      beneficiaryName: "Benjamin Reyes",
+      role: "Developer (Retired)",
+      bankName: "Wells Fargo",
+      maskedAccount: "57******14",
+      amountEur: BigInt(265000),
+      status: "Paid",
+      date: "22 Feb 2026",
+    },
+  ];
+
   const pendingTransactions = [
     {
       beneficiaryName: "Jordan Thomas",
@@ -16,7 +37,7 @@ export default function TransactionHistoryPage6() {
       maskedAccount: "23*******56",
       amountEur: BigInt(220000),
       status: "Pending",
-      date: "20 march 2026",
+      date: "20 Mar 2026",
       missingRequirementIds: DEFAULT_MISSING_IDS,
     },
     {
@@ -26,27 +47,7 @@ export default function TransactionHistoryPage6() {
       maskedAccount: "41******82",
       amountEur: BigInt(180000),
       status: "Pending",
-      date: "12 may 2026",
-      missingRequirementIds: DEFAULT_MISSING_IDS,
-    },
-    {
-      beneficiaryName: "Benjamin Reyes",
-      role: "Developer (Retired)",
-      bankName: "Wells Fargo",
-      maskedAccount: "57******14",
-      amountEur: BigInt(265000),
-      status: "Pending",
-      date: "8 march 2026",
-      missingRequirementIds: DEFAULT_MISSING_IDS,
-    },
-    {
-      beneficiaryName: "Sandra Foster",
-      role: "Backend Engineer (Retired)",
-      bankName: "JPMorgan Chase",
-      maskedAccount: "29******27",
-      amountEur: BigInt(200000),
-      status: "Pending",
-      date: "26 feb 2026",
+      date: "12 May 2026",
       missingRequirementIds: DEFAULT_MISSING_IDS,
     },
     {
@@ -56,7 +57,7 @@ export default function TransactionHistoryPage6() {
       maskedAccount: "220*****5",
       amountEur: BigInt(220000),
       status: "Pending",
-      date: "5 April 2026",
+      date: "5 Apr 2026",
       missingRequirementIds: DEFAULT_MISSING_IDS,
     },
   ];
@@ -80,6 +81,22 @@ export default function TransactionHistoryPage6() {
         </div>
 
         <div className="space-y-6">
+          {shouldShowSection("Paid") && (
+            <TransactionSection
+              title="Paid Transactions"
+              status="Paid"
+              transactions={paidTransactions}
+              columns={[
+                "Beneficiary / Role",
+                "Bank",
+                "Account",
+                "Amount",
+                "Status",
+                "Date",
+              ]}
+            />
+          )}
+
           {shouldShowSection("Pending") && (
             <TransactionSection
               title="Pending Transactions"

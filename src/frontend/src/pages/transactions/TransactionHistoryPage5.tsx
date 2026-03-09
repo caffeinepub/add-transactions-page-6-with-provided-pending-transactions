@@ -19,7 +19,7 @@ export default function TransactionHistoryPage5() {
       maskedAccount: "49******72",
       amountEur: BigInt(195000),
       status: "Paid",
-      date: "11 jan  2026",
+      date: "11 Jan 2026",
     },
     {
       beneficiaryName: "Julian Foster",
@@ -29,6 +29,15 @@ export default function TransactionHistoryPage5() {
       amountEur: BigInt(250000),
       status: "Paid",
       date: "20 Mar 2025",
+    },
+    {
+      beneficiaryName: "Peter O'Sullivan",
+      role: "Cloud Platform Engineer (Retired)",
+      bankName: "Wells Fargo",
+      maskedAccount: "52*****54",
+      amountEur: BigInt(230000),
+      status: "Paid",
+      date: "15 Feb 2026",
     },
   ];
 
@@ -41,16 +50,6 @@ export default function TransactionHistoryPage5() {
       amountEur: BigInt(170000),
       status: "Pending",
       date: "10 Dec 2026",
-      missingRequirementIds: DEFAULT_MISSING_IDS,
-    },
-    {
-      beneficiaryName: "Peter O'Sullivan",
-      role: "Cloud Paytorm Engineer (Retired)",
-      bankName: "Wells Fargo",
-      maskedAccount: "52*****54",
-      amountEur: BigInt(230000),
-      status: "Pending",
-      date: "03 Mar 2026",
       missingRequirementIds: DEFAULT_MISSING_IDS,
     },
   ];

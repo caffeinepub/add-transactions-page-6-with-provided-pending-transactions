@@ -7,7 +7,6 @@ import {
   createRouter,
 } from "@tanstack/react-router";
 import { ThemeProvider } from "next-themes";
-import AppFooter from "./components/AppFooter";
 import AppHeader from "./components/AppHeader";
 import PensionRequirementsPage from "./pages/PensionRequirementsPage";
 import TransactionHistoryPage1 from "./pages/transactions/TransactionHistoryPage1";
@@ -25,7 +24,6 @@ function Layout() {
       <main className="flex-1">
         <Outlet />
       </main>
-      <AppFooter />
       <Toaster />
     </div>
   );

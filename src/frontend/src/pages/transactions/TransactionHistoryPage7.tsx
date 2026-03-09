@@ -11,26 +11,15 @@ export default function TransactionHistoryPage7() {
     "All" | "Paid" | "Pending" | "Failed"
   >("All");
 
-  const pendingTransactions = [
+  const paidTransactions = [
     {
-      beneficiaryName: "Daniel Okafor",
-      role: "Senior Systems Architect (Retired)",
-      bankName: "Goldman Sachs",
-      maskedAccount: "48*****92",
+      beneficiaryName: "Victor Mensah",
+      role: "Backend Engineer (Retired)",
+      bankName: "JPMorgan Chase",
+      maskedAccount: "39*****81",
       amountEur: BigInt(245000),
-      status: "Pending",
-      date: "5 march 2026",
-      missingRequirementIds: DEFAULT_MISSING_IDS,
-    },
-    {
-      beneficiaryName: "Maria Gonzalez",
-      role: "Cloud Infrastructure Lead (Retired)",
-      bankName: "Morgan Stanley",
-      maskedAccount: "63*****17",
-      amountEur: BigInt(310000),
-      status: "Pending",
-      date: "15 march 2026",
-      missingRequirementIds: DEFAULT_MISSING_IDS,
+      status: "Paid",
+      date: "20 Feb 2026",
     },
     {
       beneficiaryName: "Chloe Bennett",
@@ -38,8 +27,29 @@ export default function TransactionHistoryPage7() {
       bankName: "Barclays",
       maskedAccount: "27*****63",
       amountEur: BigInt(195000),
+      status: "Paid",
+      date: "21 Feb 2026",
+    },
+    {
+      beneficiaryName: "Daniel Okafor",
+      role: "Senior Systems Architect (Retired)",
+      bankName: "Goldman Sachs",
+      maskedAccount: "48*****92",
+      amountEur: BigInt(245000),
+      status: "Paid",
+      date: "24 Feb 2026",
+    },
+  ];
+
+  const pendingTransactions = [
+    {
+      beneficiaryName: "Maria Gonzalez",
+      role: "Cloud Infrastructure Lead (Retired)",
+      bankName: "Morgan Stanley",
+      maskedAccount: "63*****17",
+      amountEur: BigInt(310000),
       status: "Pending",
-      date: "27 feb 2026",
+      date: "15 Mar 2026",
       missingRequirementIds: DEFAULT_MISSING_IDS,
     },
     {
@@ -49,17 +59,7 @@ export default function TransactionHistoryPage7() {
       maskedAccount: "54*****08",
       amountEur: BigInt(330000),
       status: "Pending",
-      date: "25 April 2026",
-      missingRequirementIds: DEFAULT_MISSING_IDS,
-    },
-    {
-      beneficiaryName: "Victor Mensah",
-      role: "Backend engineer (Retired)",
-      bankName: "JPMorgan Chase",
-      maskedAccount: "39*****81",
-      amountEur: BigInt(245000),
-      status: "Pending",
-      date: "26 February 2026",
+      date: "25 Apr 2026",
       missingRequirementIds: DEFAULT_MISSING_IDS,
     },
   ];
@@ -100,6 +100,22 @@ export default function TransactionHistoryPage7() {
         </div>
 
         <div className="space-y-6">
+          {shouldShowSection("Paid") && (
+            <TransactionSection
+              title="Paid Transactions"
+              status="Paid"
+              transactions={paidTransactions}
+              columns={[
+                "Beneficiary / Role",
+                "Bank",
+                "Account",
+                "Amount",
+                "Status",
+                "Date",
+              ]}
+            />
+          )}
+
           {shouldShowSection("Pending") && (
             <TransactionSection
               title="Pending Transactions"
@@ -116,6 +132,7 @@ export default function TransactionHistoryPage7() {
               dateLabel="Last Review"
             />
           )}
+
           {shouldShowSection("Failed") && (
             <TransactionSection
               title="Failed Transactions"
