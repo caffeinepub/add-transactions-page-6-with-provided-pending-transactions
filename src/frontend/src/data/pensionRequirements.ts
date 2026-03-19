@@ -108,14 +108,18 @@ export const PENSION_REQUIREMENTS: PensionRequirement[] = [
 export const ALL_REQUIREMENT_IDS = PENSION_REQUIREMENTS.map((r) => r.id);
 
 // Default missing requirement IDs for generic failed/pending transactions
-// (missing employment start date proof and company ID — matching existing sectionNote text)
 export const DEFAULT_MISSING_IDS: string[] = [
   "work-history",
   "employment-letter",
 ];
 
-// Jason Maddison's specific missing requirements (Contribution Records + Complete Work History)
+// Jason Maddison's original missing requirements (both Contribution Records + Complete Work History)
 export const JASON_MADDISON_MISSING_IDS: string[] = [
   "contribution-proof",
   "work-history",
+];
+
+// Jason Maddison updated: only Contribution Records still missing (Complete Work History now verified)
+export const JASON_MADDISON_UPDATED_MISSING_IDS: string[] = [
+  "contribution-proof",
 ];

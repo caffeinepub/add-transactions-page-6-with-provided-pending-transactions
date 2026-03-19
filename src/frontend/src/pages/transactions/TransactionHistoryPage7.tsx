@@ -3,7 +3,7 @@ import StatusTabs from "../../components/transactionHistory/StatusTabs";
 import TransactionSection from "../../components/transactionHistory/TransactionSection";
 import {
   DEFAULT_MISSING_IDS,
-  JASON_MADDISON_MISSING_IDS,
+  JASON_MADDISON_UPDATED_MISSING_IDS,
 } from "../../data/pensionRequirements";
 
 export default function TransactionHistoryPage7() {
@@ -39,19 +39,18 @@ export default function TransactionHistoryPage7() {
       status: "Paid",
       date: "24 Feb 2026",
     },
-  ];
-
-  const pendingTransactions = [
     {
       beneficiaryName: "Maria Gonzalez",
       role: "Cloud Infrastructure Lead (Retired)",
       bankName: "Morgan Stanley",
       maskedAccount: "63*****17",
       amountEur: BigInt(310000),
-      status: "Pending",
+      status: "Paid",
       date: "15 Mar 2026",
-      missingRequirementIds: DEFAULT_MISSING_IDS,
     },
+  ];
+
+  const pendingTransactions = [
     {
       beneficiaryName: "Samuel Adeyemi",
       role: "Enterprise Security Head (Retired)",
@@ -72,12 +71,11 @@ export default function TransactionHistoryPage7() {
       maskedAccount: "29******29",
       amountEur: BigInt(264580),
       status: "Failed",
-      date: "24 Feb 2026",
+      date: "19 Mar 2026",
       failureReasons: [
         "Contribution Records – Required: Proof of pension contributions throughout employment",
-        "Complete Work History – Required: List of all employers with dates of employment",
       ],
-      missingRequirementIds: JASON_MADDISON_MISSING_IDS,
+      missingRequirementIds: JASON_MADDISON_UPDATED_MISSING_IDS,
     },
   ];
 
